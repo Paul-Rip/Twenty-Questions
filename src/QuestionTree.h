@@ -4,16 +4,18 @@
 
 #include "UserInterface.h"
 #include "QuestionNode.h"
-#include "QuestionNode.h"
+#include <iostream>
 
 class QuestionTree{
-    private:
+private:
     QuestionNode* node;
-    public:
+    UserInterface* inOrOut;
+    void playHelper(QuestionNode* node);
+public:
     QuestionTree(UserInterface* ui);
     void play();
-    void save(ostream* output);
-    void load(istream* input);
+    void save(std::ostream* output);
+    void load(std::istream* input);
     int totalGames();
     int gamesWon();
     ~QuestionTree();
